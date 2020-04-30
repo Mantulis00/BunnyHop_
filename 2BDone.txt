@@ -1,0 +1,13 @@
+﻿### TO DO ###
+
+#Add money feature redo from invenotryManager To AchievmentsManager
+
+
+
+### FEATURES / FUNCTIONALITIES TO ADD ###
+
+
+
+
+### BUGS ###
+
