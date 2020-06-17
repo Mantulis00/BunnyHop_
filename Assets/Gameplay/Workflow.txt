@@ -1,22 +1,23 @@
 ﻿### TO DO ###
 
 ## Achievments ##
-# Show last and max distances #
+DONE WHEN GAMEOVER ONLY NO TEXT # Show last and max distances #
 
 ## UI ##
-# Make UI planes transperent # DONE 50%
+DONE 50% # Make UI planes transperent # 
 # Make UI Text transperent #
-# Make UI planes NOT transperent when needed # DONE 50%
-# Show last & max distances # DONE
-
+DONE 50% # Make UI planes NOT transperent when needed # 
+DONE # Show last & max distances # 
+#Build version textures and transperency bugs !
 
 ### BUGS ###
 
 ## UI ##
-# player moves if u press on UI keys  (SETTINGS KEY)   #
+DONE # player moves if u press on UI keys  (SETTINGS KEY)   # 
 
 ## AI ##
-# AI doesn't know what to do if first obsticle is not reached #
+DONE # AI doesn't know what to do if first obsticle is not reached #
+#If you hide at very side of maps AI bugs out #
 
 ## Gameplay ##
 # Dont let player go too much to sides #	* maybe bounce off *
@@ -31,12 +32,12 @@
 
 
 ### 04 16
-# sides clipping bug FIXED 14:26
+DONE # sides clipping bug 
 
 1# obsticle clipping (intersect w/ other obsticles) 
-2# AI COULD LEAVE SIDES / AI seaks first slit b4 player BUG
 3# if AI hits wall it stops
 
 # loot boxes skins shop/inventory player / obsticle skins
+
 
 

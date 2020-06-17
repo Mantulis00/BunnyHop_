@@ -40,7 +40,7 @@ namespace Assets
 
             SetupState(States.StartMenu);
 
-            cofin.Play();
+       //     cofin.Play();
         }
 
 
@@ -78,6 +78,7 @@ namespace Assets
             /// cofin
                  if (Player.x - AI.x < ccofin) cofin.volume = 1.05f - (Player.x - AI.x) / ccofin;
                 else cofin.volume = 0.05f;
+
 
 
 
@@ -138,7 +139,7 @@ namespace Assets
 
             SetupVisiblePlains(state); // setup menues which should be shown
 
-            if (state == States.Ingame) // if state is ingame, show last menue as "transperent cload"
+            if (state == States.Ingame) // if state is ingame, show last menue as "transperent cloud"
             {
 
                 SetupVisiblePlains(lastState);
