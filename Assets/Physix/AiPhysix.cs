@@ -73,9 +73,9 @@ public class AiPhysix : MonoBehaviour , ILaunchable
     private void ManageSpeed()
     {
         if (speed.x <= 50)
-            speed.x += 0.05f;
+            speed.x += 5f * Time.deltaTime;
         else
-            speed.x += 0.02f;
+            speed.x += 2f * Time.deltaTime;
 
 
         if (player.position.x < AI.position.x)
