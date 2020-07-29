@@ -10,9 +10,8 @@ public class AiPhysix : MonoBehaviour , ILaunchable
     public Spawner spawner;
     private Vector3 speed, startPos, startSpeed;
 
-    private float forceCof;
+    private float forceCof, powerCof;
     private float sideDistance;
-
 
     public States state;
 
@@ -39,7 +38,7 @@ public class AiPhysix : MonoBehaviour , ILaunchable
         AI.position = new Vector3(-100, 0, 0);
         
 
-        forceCof = 100;
+        forceCof = 100; powerCof = 0.01f;
         sideDistance = 8;
         speed = new Vector3(0, 0, 0);
     }
@@ -74,9 +73,9 @@ public class AiPhysix : MonoBehaviour , ILaunchable
     private void ManageSpeed()
     {
         if (speed.x <= 50)
-            speed.x += 0.05f;
+            speed.x += 5f * Time.deltaTime;
         else
-            speed.x += 0.02f;
+            speed.x += 2f * Time.deltaTime;
 
 
         if (player.position.x < AI.position.x)
@@ -98,7 +97,7 @@ public class AiPhysix : MonoBehaviour , ILaunchable
         
 
 
-        if (AI.position.x > spawner.TileList[0].transform.position.x) // to follow player
+        if (AI.position.x > spawner.TileList[0].transform.position.x || !spawner.passedFirst) // to follow player || (temp workaround)
         {
             float xDistance = player.position.x - AI.position.x;
             float zDistance = (player.position.z - AI.position.z);
@@ -110,11 +109,16 @@ public class AiPhysix : MonoBehaviour , ILaunchable
 
             speed.z += (zDistance / xDistance * forceCof) *Time.deltaTime;
 
-            if (System.Math.Abs(player.position.z - AI.position.z) < sideDistance || System.Math.Abs(zDistance + speed.z) != zDistance + speed.z)
+            if (System.Math.Abs(zDistance) < sideDistance || System.Math.Abs(zDistance + speed.z) != zDistance + speed.z) 
             {
-               speed.z = speed.z * (float)System.Math.Pow(0.01f, Time.deltaTime);
+
+                    speed.z = speed.z * (float)System.Math.Pow(powerCof, Time.deltaTime);
+               
                 //speed.z = speed.z * 0.5f;
             }
+
+
+           
 
 
         }
@@ -137,8 +141,10 @@ public class AiPhysix : MonoBehaviour , ILaunchable
 
             if (System.Math.Abs(zDistance) < sideDistance || System.Math.Abs(zDistance + speed.z) != zDistance + speed.z)
             {
-                speed.z = speed.z * (float)System.Math.Pow(0.01f, Time.deltaTime);
-                //speed.z = speed.z * 0.5f;
+                if (System.Math.Abs(zDistance) >= 1)
+                {
+                    speed.z = speed.z * (float)System.Math.Pow(powerCof, Time.deltaTime);
+                }
             }
 
         }

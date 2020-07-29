@@ -1,11 +1,4 @@
-﻿using Assets.Memory.Adaptors;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Physix
 {
@@ -21,7 +14,7 @@ namespace Assets.Physix
        
 
 
-        private void OnCollisionEnter(Collision collision) // clean up after
+        private void OnCollisionEnter(Collision collision) // clean up after // controlled by boxcolider
         {
             menuManager.SetupState(States.GameOverMenu);
             
